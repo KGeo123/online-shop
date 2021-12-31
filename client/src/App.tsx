@@ -1,26 +1,20 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import tw from 'twin.macro';
+import styled from 'styled-components';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const Button = styled.button`
+  ${tw`bg-blue-800 rounded shadow-sm text-white px-4 py-2 m-8`};
+  ${tw`hover:bg-blue-600 transition-colors duration-150`}
+
+  & div {
+    ${tw`h-80 w-64`};
+  }
+`;
+
+const App: React.FC = () => {
+  return <Button>hello there</Button>;
+};
 
 export default App;
