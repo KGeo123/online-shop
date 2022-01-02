@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 import validationSchema from './validation';
 import InputField from '../../components/InputField/inputField';
 import Button, { ButtonVariant } from '../../components/Button/button';
+import { Link } from 'react-router-dom';
 
 const LoginPage = () => {
   const formik = useFormik({
@@ -23,6 +24,7 @@ const LoginPage = () => {
           value={formik.values.email}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
+          inputTouched={formik.touched.email}
         />
         <InputField
           name="password"
@@ -31,10 +33,18 @@ const LoginPage = () => {
           value={formik.values.password}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
+          inputTouched={formik.touched.password}
         />
         <Button variant={ButtonVariant.form} type="submit">
-          submit
+          login
         </Button>
+        {/* this is temporary */}
+        <p className="mx-auto  mt-4 font-semibold">
+          Don't have an account?{' '}
+          <Link className="text-blue-600 font-semibold underline" to="/sign-up">
+            Sign Up
+          </Link>
+        </p>
       </Form>
     </div>
   );

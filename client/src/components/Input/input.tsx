@@ -6,7 +6,7 @@ const Input = styled.input`
   ${tw`focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500`}
 	${tw`transition-colors`}
 	${({ hasError }: { hasError?: boolean }) =>
-    hasError && tw`focus:ring-red-500 border-red-500 bg-red-100`}
+    hasError && tw`focus:ring-red-500 border-red-500`}
 `;
 
 export default Input;
