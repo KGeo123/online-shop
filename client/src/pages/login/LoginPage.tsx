@@ -1,8 +1,9 @@
 import Form from '../../layouts/Form/form';
 import React from 'react';
-import { Field, useFormik } from 'formik';
+import { useFormik } from 'formik';
 import validationSchema from './validation';
-import Input from '../../components/Input/input';
+import InputField from '../../components/InputField/inputField';
+import Button, { ButtonVariant } from '../../components/Button/button';
 
 const LoginPage = () => {
   const formik = useFormik({
@@ -16,22 +17,24 @@ const LoginPage = () => {
   return (
     <div>
       <Form onSubmit={formik.handleSubmit}>
-        <Input
-          hasError={!!formik.errors.email && formik.touched.email}
+        <InputField
           name="email"
+          error={formik.errors.email}
           value={formik.values.email}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
         />
-        <Input
-          type="password"
-          hasError={!!formik.errors.password && formik.touched.password}
+        <InputField
           name="password"
+          inputType="password"
+          error={formik.errors.password}
           value={formik.values.password}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
         />
-        <button type="submit">submit</button>
+        <Button variant={ButtonVariant.form} type="submit">
+          submit
+        </Button>
       </Form>
     </div>
   );
