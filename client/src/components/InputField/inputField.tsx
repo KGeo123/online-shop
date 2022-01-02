@@ -16,12 +16,11 @@ interface Props {
 const InputField: React.FC<Props> = (props) => {
   return (
     <InputContainer>
-      <Label htmlFor={props.name}></Label>
+      <Label htmlFor={props.name}>{props.name}</Label>
       <Input
         hasError={!!props.error}
         name={props.name}
         id={props.name}
-        placeholder={props.name}
         type={props.inputType ?? 'text'}
         onChange={props.onChange}
         onBlur={props.onBlur}
