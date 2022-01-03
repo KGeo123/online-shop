@@ -1,15 +1,23 @@
 import LoginPage from './pages/login/LoginPage';
 import SignUpPage from './pages/sign-up/SignUpPage';
 import { Route, Routes } from 'react-router';
+import Layout from './layouts/Layout/layout';
 
 function App() {
   return (
-    <div className="bg-gray-700 h-screen w-screen pt-24">
-      <Routes>
-        <Route path="/" element={<LoginPage />} />
-        <Route path="/sign-up" element={<SignUpPage />} />
-      </Routes>
-    </div>
+    <Layout
+      header={
+        <div>
+          <p>Hello world my friend</p>
+        </div>
+      }
+      main={
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/sign-up" element={<SignUpPage />} />
+        </Routes>
+      }
+    />
   );
 }
 
