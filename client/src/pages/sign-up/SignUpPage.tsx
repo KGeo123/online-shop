@@ -2,6 +2,7 @@ import { useFormik } from 'formik';
 import React from 'react';
 import Button, { ButtonVariant } from '../../components/Button/button';
 import InputField from '../../components/InputField/inputField';
+import PromptLink from '../../components/PropmptLink/propmptLink';
 import Form from '../../layouts/Form/form';
 import validationSchema from './validation';
 
@@ -51,6 +52,7 @@ const SignUpPage = () => {
         inputTouched={formik.touched.confirmPassword}
         error={formik.errors.confirmPassword}
         onBlur={formik.handleBlur}
+        labelText="confirm password"
         onChange={formik.handleChange}
         value={formik.values.confirmPassword}
         inputType="password"
@@ -58,7 +60,11 @@ const SignUpPage = () => {
       <Button type="submit" variant={ButtonVariant.form}>
         Sign Up
       </Button>
-			{/* add the going back to login link */}
+      <PromptLink
+        prompt="Already have an account..."
+        linkText="Login"
+        href="/"
+      />
     </Form>
   );
 };

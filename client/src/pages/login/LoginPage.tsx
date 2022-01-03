@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 import validationSchema from './validation';
 import InputField from '../../components/InputField/inputField';
 import Button, { ButtonVariant } from '../../components/Button/button';
-import { Link } from 'react-router-dom';
+import PromptLink from '../../components/PropmptLink/propmptLink';
 
 const LoginPage = () => {
   const formik = useFormik({
@@ -38,13 +38,11 @@ const LoginPage = () => {
         <Button variant={ButtonVariant.form} type="submit">
           login
         </Button>
-        {/* this is temporary */}
-        <p className="mx-auto  mt-4 font-semibold">
-          Don't have an account?{' '}
-          <Link className="text-blue-600 font-semibold underline" to="/sign-up">
-            Sign Up
-          </Link>
-        </p>
+        <PromptLink
+          linkText="Sign Up"
+          href="/sign-up"
+          prompt="Dont't have an account..."
+        />
       </Form>
     </div>
   );

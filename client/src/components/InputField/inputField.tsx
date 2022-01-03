@@ -12,12 +12,13 @@ interface Props {
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
   inputType?: React.HTMLInputTypeAttribute;
   inputTouched?: boolean;
+  labelText?: string;
 }
 
 const InputField: React.FC<Props> = (props) => {
   return (
     <InputContainer>
-      <Label htmlFor={props.name}>{props.name}</Label>
+      <Label htmlFor={props.name}>{props.labelText ?? props.name}</Label>
       <Input
         placeholder={props.name}
         hasError={!!props.error && props.inputTouched}
