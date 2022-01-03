@@ -10,7 +10,8 @@ function App() {
       header={<Header />}
       main={
         <Routes>
-          <Route path="/" element={<LoginPage />} />
+          <Route path="/" element={<div>implement this later</div>} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
         </Routes>
       }

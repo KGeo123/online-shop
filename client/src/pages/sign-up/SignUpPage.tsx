@@ -63,7 +63,7 @@ const SignUpPage = () => {
       <PromptLink
         prompt="Already have an account..."
         linkText="Login"
-        href="/"
+        href="/login"
       />
     </Form>
   );
