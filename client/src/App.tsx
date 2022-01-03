@@ -2,15 +2,12 @@ import LoginPage from './pages/login/LoginPage';
 import SignUpPage from './pages/sign-up/SignUpPage';
 import { Route, Routes } from 'react-router';
 import Layout from './layouts/Layout/layout';
+import Header from './components/Header/header';
 
 function App() {
   return (
     <Layout
-      header={
-        <div>
-          <p>Hello world my friend</p>
-        </div>
-      }
+      header={<Header />}
       main={
         <Routes>
           <Route path="/" element={<LoginPage />} />
