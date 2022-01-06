@@ -3,6 +3,7 @@ import InputContainer from '../../layouts/InputContainer/inputContainer';
 import Label from '../Label/label';
 import Input from '../Input/input';
 import ErrorMessage from '../ErrorMessage/errorMessage';
+import { AnimatePresence } from 'framer-motion';
 
 interface Props {
   error?: string;
@@ -20,7 +21,7 @@ const InputField: React.FC<Props> = (props) => {
     <InputContainer>
       <Label htmlFor={props.name}>{props.labelText ?? props.name}</Label>
       <Input
-        placeholder={props.name}
+        placeholder={props.labelText ?? props.name}
         hasError={!!props.error && props.inputTouched}
         name={props.name}
         id={props.name}
@@ -28,7 +29,11 @@ const InputField: React.FC<Props> = (props) => {
         onChange={props.onChange}
         onBlur={props.onBlur}
       />
-      {props.inputTouched && <ErrorMessage>{props.error}</ErrorMessage>}
+      <AnimatePresence initial={true}>
+        {props.inputTouched && props.error && (
+          <ErrorMessage key="error">{props.error}</ErrorMessage>
+        )}
+      </AnimatePresence>
     </InputContainer>
   );
 };

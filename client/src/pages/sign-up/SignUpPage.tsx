@@ -1,4 +1,5 @@
 import { useFormik } from 'formik';
+import { AnimatePresence } from 'framer-motion';
 import React from 'react';
 import Button, { ButtonVariant } from '../../components/Button/button';
 import InputField from '../../components/InputField/inputField';
