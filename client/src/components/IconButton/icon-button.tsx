@@ -3,7 +3,7 @@ import { IconType } from 'react-icons';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-interface Props {
+interface Props extends React.HTMLProps<HTMLButtonElement> {
   icon: React.ReactElement;
 }
 
@@ -12,12 +12,12 @@ const IconButtonWrapper = styled.button`
   ${tw`transition-colors`}
 `;
 
-const IconButton: React.FC<Props> = ({ icon }) => {
+const IconButton: React.FC<Props> = ({ icon, onClick }) => {
   return (
-    <IconButtonWrapper type="button">
+    <IconButtonWrapper {...{ onClick }} type="button">
       {icon}
     </IconButtonWrapper>
   );
 };
 
-export default IconButton;
+export default React.memo(IconButton);

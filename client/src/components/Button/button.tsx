@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import React from 'react';
 
 export enum ButtonVariant {
   form,
@@ -16,4 +17,4 @@ const Button = styled.button`
   }}
 `;
 
-export default Button;
+export default React.memo(Button);

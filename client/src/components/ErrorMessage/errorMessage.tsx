@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import tw from 'twin.macro';
 
@@ -25,4 +26,4 @@ const ErrorMessage = styled(motion.p).attrs({
   ${tw`text-red-500 mt-2`}
 `;
 
-export default ErrorMessage;
+export default React.memo(ErrorMessage);

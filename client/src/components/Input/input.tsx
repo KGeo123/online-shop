@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import React from 'react';
 
 const Input = styled.input`
   ${tw`w-full border border-gray-300 px-4 py-2 rounded-lg shadow-sm`}
@@ -9,4 +10,4 @@ const Input = styled.input`
     hasError && tw`focus:ring-red-500 border-red-500`}
 `;
 
-export default Input;
+export default React.memo(Input);

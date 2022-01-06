@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { MdDehaze } from 'react-icons/md';
 import IconButton from '../IconButton/icon-button';
+import HeaderWrapper from '../../layouts/HeaderWrapper/header-wrapper';
+import Logo from '../Logo/logo';
 
 export const Header = () => {
+  const [showSideMenu, setShowSideMenu] = useState(false);
+
+  const handleButtonClick = useCallback(
+    () => setShowSideMenu(true),
+    [setShowSideMenu],
+  );
+
   return (
-    // todo: create the aside component that opens once the icon button is clicked
-    <div className="flex flex-row-reverse items-center h-full px-8">
-      <IconButton icon={<MdDehaze color="white" size={34} />} />
-    </div>
+    <HeaderWrapper>
+      <Logo />
+      <IconButton
+        onClick={handleButtonClick}
+        icon={<MdDehaze color="white" size={34} />}
+      />
+    </HeaderWrapper>
   );
 };
 
-export default Header;
+export default React.memo(Header);

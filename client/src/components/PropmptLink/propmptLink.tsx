@@ -18,4 +18,4 @@ const PromptLink: React.FC<Props> = ({ linkText, prompt, href }) => {
   );
 };
 
-export default PromptLink;
+export default React.memo(PromptLink);
