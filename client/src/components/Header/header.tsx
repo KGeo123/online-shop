@@ -3,6 +3,7 @@ import { MdDehaze } from 'react-icons/md';
 import IconButton from '../IconButton/icon-button';
 import HeaderWrapper from '../../layouts/HeaderWrapper/header-wrapper';
 import Logo from '../Logo/logo';
+import Overlay from '../../layouts/Overlay/overlay';
 
 export const Header = () => {
   const [showSideMenu, setShowSideMenu] = useState(false);
@@ -19,6 +20,7 @@ export const Header = () => {
         onClick={handleButtonClick}
         icon={<MdDehaze color="white" size={34} />}
       />
+      {showSideMenu && <Overlay />}
     </HeaderWrapper>
   );
 };
