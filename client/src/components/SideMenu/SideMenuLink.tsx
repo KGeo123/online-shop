@@ -20,7 +20,7 @@ const SideMenuLink = styled(motion(Link)).attrs({
   initial: 'hidden',
   variants,
 })`
-  ${tw`text-white font-semibold text-lg`}
+  ${tw`text-white mb-8 font-semibold text-lg`}
 `;
 
 export default SideMenuLink;
