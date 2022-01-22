@@ -1,6 +1,6 @@
-FROM node:latest AS development
+FROM node:alpine AS development
 ENV NODE_ENV development
-WORKDIR /app
+WORKDIR /client
 COPY package*.json .
 RUN npm install
 COPY . .
